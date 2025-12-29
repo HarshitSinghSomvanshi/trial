@@ -1,20 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Lumen Path</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Lumen Path — Real-World Career Intelligence</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-  <h1>Illuminate Your Career Path</h1>
-  <p>Real-world intelligence powered by live skill demand</p>
-  <button onclick="goLogin()">Get Started</button>
-</header>
+<!-- MARKET TICKER -->
+<div class="ticker">
+  <span>🔥 Trending Skill: Rust (+14%)</span>
+  <span>☁️ High Demand: Cloud Security</span>
+  <span>📈 New Job Postings: 12,402</span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <canvas id="graph"></canvas>
+
+  <div class="hero-content">
+    <h1>Illuminate Your Career Path with<br><span>Real-World Intelligence</span></h1>
+
+    <p>
+      Stop guessing. Lumen Path uses <b>RAG-powered Knowledge Graphs</b>
+      to map your current skills against real-time market data from
+      LinkedIn, Indeed, and GitHub.
+    </p>
+
+    <div class="cta-group">
+      <button class="primary" onclick="location.href='login.html'">
+        Get My Free Gap Analysis
+      </button>
+      <button class="secondary" onclick="openVideo()">
+        Watch the Engine in Action
+      </button>
+    </div>
+
+    <div class="search-box">
+      <input id="typewriter" disabled />
+    </div>
+  </div>
+</section>
+
+<!-- THREE ENGINE ARCHITECTURE -->
+<section class="engines">
+  <div class="engine-card">
+    <h3>⚡ Ingestion</h3>
+    <p class="engine-title">Real-Time Pulse</p>
+    <p>We pull live trends from GitHub, LinkedIn, and Indeed every hour.</p>
+  </div>
+
+  <div class="engine-card">
+    <h3>🧬 Mapping</h3>
+    <p class="engine-title">Mathematical Precision</p>
+    <p>Our vector embeddings uncover hidden skill relationships globally.</p>
+  </div>
+
+  <div class="engine-card">
+    <h3>🧠 Synthesis</h3>
+    <p class="engine-title">Human-Readable Growth</p>
+    <p>Gemini 1.5 Flash turns data into a personalized roadmap.</p>
+  </div>
+</section>
+
+<!-- POWERED BY -->
+<section class="powered">
+  <span>Powered by</span>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Google_Gemini_logo.svg">
+  <img src="https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo.svg">
+  <img src="https://python.org/static/community_logos/python-logo.png">
+</section>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeVideo()">✖</span>
+    <video controls>
+      <source src="demo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<script src="js/hero-graph.js"></script>
+<script src="js/typewriter.js"></script>
 
 <script>
-function goLogin() {
-  window.location.href = "login.html";
+function openVideo() {
+  document.getElementById("videoModal").style.display = "flex";
+}
+function closeVideo() {
+  document.getElementById("videoModal").style.display = "none";
 }
 </script>
 
