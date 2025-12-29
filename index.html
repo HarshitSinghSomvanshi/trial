@@ -30,9 +30,7 @@
     </p>
 
     <div class="cta-group">
-      <button class="primary" onclick="location.href='login.html'">
-        Get My Free Gap Analysis
-      </button>
+<button class="primary" onclick="goNext()">Get My Free Gap Analysis</button>        
       <button class="secondary" onclick="openVideo()">
         Watch the Engine in Action
       </button>
@@ -94,6 +92,14 @@ function closeVideo() {
   document.getElementById("videoModal").style.display = "none";
 }
 </script>
+<script>
+function goNext() {
+  document.body.classList.add("fade-out");
 
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 650);
+}
+</script>
 </body>
 </html>
