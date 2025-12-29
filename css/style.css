@@ -1,0 +1,26 @@
+body {
+  background: #0B1120;
+  color: white;
+  font-family: Inter, sans-serif;
+  padding: 40px;
+}
+
+button {
+  background: #3B82F6;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 0 15px #3B82F6;
+}
+
+input, select {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
