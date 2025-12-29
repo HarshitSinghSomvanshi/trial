@@ -1,190 +1,70 @@
-:root {
-  --bg-main: #071a14;          /* Deep hunter green */
-  --bg-panel: #0c2b22;
-  --green: #2dd4a3;
-  --green-soft: #1fa97f;
-  --slate: #9ca3af;
-  --lumen: #d1fae5;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
+/* ================= ONBOARD OVERLAY ================= */
+.onboard {
+  position: fixed;
+  inset: 0;
   background: radial-gradient(
     circle at top,
-    #0f3d2e 0%,
-    var(--bg-main) 45%
+    rgba(15, 61, 46, 0.95),
+    rgba(2, 19, 15, 0.98)
   );
-  color: var(--lumen);
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
-}
-
-/* ================= TICKER ================= */
-.ticker {
-  background: #020f0b;
-  display: flex;
-  gap: 40px;
-  padding: 10px 20px;
-  font-size: 13px;
-  border-bottom: 1px solid #134e4a;
-}
-
-.ticker span {
-  color: var(--green);
-  animation: scroll 22s linear infinite;
-}
-
-@keyframes scroll {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
-}
-
-/* ================= HERO ================= */
-.hero {
-  min-height: 100vh;
+  backdrop-filter: blur(14px);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  z-index: 99;
+  animation: fadeIn 0.8s ease;
 }
 
-.hero-content {
-  max-width: 880px;
-  text-align: center;
-  z-index: 2;
-  padding: 40px;
+.hidden {
+  display: none;
 }
 
-.hero h1 {
-  font-size: 58px;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-.hero h1 span {
-  color: var(--green);
-  text-shadow: 0 0 25px rgba(45,212,163,0.6);
-}
-
-.hero p {
-  margin-top: 24px;
-  color: var(--slate);
-  font-size: 18px;
-}
-
-/* ================= CTA ================= */
-.cta-group {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-
-button {
-  padding: 15px 30px;
-  border-radius: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.35s ease;
-}
-
-.primary {
-  background: linear-gradient(
-    135deg,
-    var(--green),
-    var(--green-soft)
-  );
-  color: #022c22;
-  box-shadow:
-    0 0 30px rgba(45,212,163,0.45),
-    inset 0 0 15px rgba(255,255,255,0.1);
-}
-
-.primary:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 0 45px rgba(45,212,163,0.8);
-}
-
-.secondary {
-  background: transparent;
-  color: var(--lumen);
+.onboard-card {
+  background: linear-gradient(160deg, #02130f, #06251d);
   border: 1px solid #134e4a;
+  border-radius: 26px;
+  padding: 50px;
+  width: 420px;
+  text-align: center;
+  box-shadow:
+    0 0 60px rgba(45, 212, 163, 0.35),
+    inset 0 0 25px rgba(255,255,255,0.04);
 }
 
-.secondary:hover {
-  border-color: var(--green);
+.onboard-card h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
   color: var(--green);
 }
 
-/* ================= SEARCH TYPEWRITER ================= */
-.search-box {
-  margin-top: 48px;
+.onboard-card p {
+  color: var(--slate);
+  margin-bottom: 30px;
 }
 
-.search-box input {
-  width: 420px;
-  padding: 16px;
-  border-radius: 14px;
+.onboard-card input,
+.onboard-card select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
   background: #02130f;
   border: 1px solid #134e4a;
   color: var(--lumen);
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
 }
 
-/* ================= ENGINE CARDS ================= */
-.engines {
-  padding: 100px 70px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 36px;
+.onboard-card button {
+  width: 100%;
+  margin-top: 10px;
 }
 
-.engine-card {
-  background: linear-gradient(
-    160deg,
-    #02130f,
-    #06251d
-  );
-  border-radius: 24px;
-  padding: 32px;
-  border: 1px solid #134e4a;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
-
-.engine-title {
-  margin: 12px 0;
-  color: var(--green);
-  font-weight: 600;
-}
-
-/* ================= POWERED BY ================= */
-.powered {
-  padding: 50px;
-  text-align: center;
-  opacity: 0.9;
-}
-
-.powered img {
-  height: 28px;
-  margin: 0 18px;
-  filter: brightness(1.2);
-}
-
-/* ================= PAGE TRANSITION ================= */
-.fade-out {
-  animation: fadeOut 0.7s forwards;
-}
-
-@keyframes fadeOut {
-  to {
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: scale(0.98);
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
